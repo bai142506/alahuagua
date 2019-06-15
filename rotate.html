@@ -1,0 +1,308 @@
+
+<html>
+<head>
+<title>1073340</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="course/style.css"
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+</head>
+
+<body background="7.png" onload="GiveMoney()">
+
+<header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Carousel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="RandomSelect.html">RandomSelect<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">course<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="rpg.html">RPG<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="love.html">love<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="youtube.html">Youtube<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="rotate.html">Rotate<span class="sr-only">(current)</span></a>
+            </li>
+                                        <li class="nav-item">
+                <a class="nav-link" href="aboutme.html">MySelf<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+
+<script language="JavaScript">
+
+var i1=1;
+var total = 10000 ;
+var click = 0 ;
+var ch=0;
+var m = [1, 1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+var m2=1,clickb=0,clickc=0;
+var a=0;
+var qq=1;
+function getdiv(id1,x2,y2,w2,h2,color2,text2){
+document.writeln("<div id='"+id1+"' style='position:absolute;top:"+y2+";left:"+x2+";width:"+w2+";height:"+h2+";background-color:"+color2+";font-size:15px'>"+text2+"</div>");
+}
+
+var r = 425;
+var x=925,y=450;
+var Colors=new Array("red","blue","yellow","white","cyan","gray");
+
+for(i=15;i<=360;i+=15){
+	getdiv("c"+i,x+r*Math.cos((i+270)*(Math.PI/180))-6,y+r*Math.sin((i+270)*(Math.PI/180))-6,15,15,Colors[3],i/15);
+}
+
+
+for(i=0;i<(r-20);i+=5){
+	getdiv("p"+i,x+i*Math.cos(270*(Math.PI/180)),y+i*Math.sin(270*(Math.PI/180)),1,1,Colors[2],"");
+}
+
+function move(){
+
+i1++;
+if(i1>24) i1=1;
+
+//document.getElementById('t1').style.left=i1;
+document.getElementById('t1').innerHTML=i1;
+
+
+var i2=i1*15;
+var id1="c"+i2;
+var id2;
+
+if (i1==1) {
+	id2="c"+(24*15);
+} else {
+	id2="c"+((i1-1)*15);
+}
+
+document.getElementById(id2).style.backgroundColor= "#ffffff";
+document.getElementById(id1).style.backgroundColor= "#0000ff";
+
+for(i=0;i<(r-20);i+=5){
+    x1=x+i*Math.cos((i1*15-90)*(Math.PI/180));
+	y1=y+i*Math.sin((i1*15-90)*(Math.PI/180));
+	document.getElementById('p'+i).style.top=y1;
+	document.getElementById('p'+i).style.left=x1;
+    
+}
+
+
+}
+
+function SE(a,obj)
+{
+	
+	m2=a;
+	if(a==10){
+	if (obj.className != "in")
+	{
+		Color = "red" ;
+		obj.style.backgroundColor = "red" ;
+		obj.className = "in" ;
+
+		document.getElementById('b').style.backgroundColor="white";
+		document.getElementById('b').className = "" ;
+		document.getElementById('c').style.backgroundColor="white";
+		document.getElementById('c').className = "" ;
+	}
+	else
+	{
+		obj.style.backgroundColor = "white" ;
+		obj.className = "" ;
+
+	}	
+	}
+	if(a==20)
+	{	
+		Color = "green" ;
+		if (obj.className != "in")
+		{
+			obj.style.backgroundColor = "green" ;
+			obj.className = "in" ;
+		document.getElementById('a').style.backgroundColor="white";
+		document.getElementById('a').className = "" ;
+		document.getElementById('c').style.backgroundColor="white";
+		document.getElementById('c').className = "" ;
+		}
+		else
+		{
+			obj.style.backgroundColor = "white" ;
+			obj.className = "" ;
+
+		}	
+	}
+	if(a==50)
+	{	
+		Color = "yellow" ;
+		if (obj.className != "in")
+		{
+			obj.style.backgroundColor = "yellow" ;
+			obj.className = "in" ;
+		document.getElementById('b').style.backgroundColor="white";
+		document.getElementById('b').className = "" ;
+		document.getElementById('a').style.backgroundColor="white";
+		document.getElementById('a').className = "" ;
+		}
+		else
+		{
+			obj.style.backgroundColor = "white" ;
+			obj.className = "" ;
+
+			
+		}	
+	}
+	document.getElementById("money").innerHTML = "you have " + total + " money left." ;
+}
+
+
+function putmoney(n,obj)
+{
+	if (obj.className != "in")
+	{
+		
+	if(m2==10)
+	{click += 1 ;}
+	if(m2==20)
+	{clickb += 1;}
+	if(m2==50)
+	{clickc += 1;}
+		obj.bgColor = Color ;
+		obj.className = "in" ;
+		total-=m2;
+		m[obj.innerHTML] = m2;
+		document.getElementById("money").innerHTML ="you have " + total + " money left." ;
+		
+	}
+	else
+	{
+if(obj.bgColor == "red"){		total+=10;
+		click -= 1 ;}
+if(obj.bgColor == "green"){		total+=20;
+		clickb -= 1 ;}
+if(obj.bgColor == "yellow"){		total+=50;
+		clickc -= 1 ;}
+		obj.bgColor = "white" ;
+		obj.className = "" ;
+		document.getElementById("money").innerHTML ="you have " + total + " money left." ;
+m[n]=m2;
+	}
+}
+
+function checkwin()
+{
+	for (var i = 1 ; i <= 24 ; i++)
+	{
+		if (document.getElementById(i).className == "in")
+		{
+			if (document.getElementById(i).innerHTML == document.getElementById("t1").innerHTML)
+			{
+				total+=m[i]*24;
+				alert("很會賭喔 "+m[i]*24+"  摳");
+			}
+		}
+	}
+	
+	document.getElementById("money").innerHTML = "you have " + total + " money left." ;
+}
+
+function Stopmoving()
+{
+if(qq==1){
+	ch=1;
+	clearInterval(run1) ;
+	checkwin();
+	total -= click*10+clickb*20+clickc*50 ;
+	document.getElementById("money").innerHTML = "you have " + total + " money left." ;
+	qq=0;
+}
+}
+
+function Startgame()
+{
+	qq=1;
+	if(ch==1){
+		run1 = window.setInterval('move()' , -10000);
+		ch=0;
+		}
+}
+
+function GiveMoney()
+{
+	document.getElementById("money").innerHTML = "you have " + total + " money left." ;
+}
+
+
+
+run1 = window.setInterval("move()" , -9999999);
+
+</script>
+
+<div id=t1 style="position:absolute;border-width:5;border-style:double;border-color:white;top:300;left:870;font-size:50px;color:white;width:100px"></div>
+
+<div style="position:absolute;top:450px;left:935;"><input type="button" value="get"
+		onClick="Stopmoving()"></div>
+
+<div style="position:absolute;top:450px;left:875;"><input type="button" value="start"
+		onClick="Startgame()"></div>
+<div id="game" style="position:absolute;top:520px;left:250px;">
+<table border="2" bgcolor="white" width="150" height="150">
+<tr>
+<td id=a  class="n" onclick="SE(10,this)">10</td><td id=b onclick="SE(20,this)">20</td><td id=c onclick="SE(50,this)">50</td>
+</tr>
+
+<tr>
+<td id=1 class="n" onclick="putmoney(1,this)">1</td><td id=2  class="n"onclick="putmoney(2,this)">2</td><td id=3  class="n" onclick="putmoney(3,this)">3</td><td id=4 onclick="putmoney(4,this)">4</td><td id=5 onclick="putmoney(5,this)">5</td>
+</tr>
+<tr>
+<td id=6 class="n" onclick="putmoney(6,this)">6</td><td id=7  class="n" onclick="putmoney(7,this)">7</td><td id=8  class="n" onclick="putmoney(8,this)">8</td><td id=9 onclick="putmoney(9,this)">9</td><td id=10 onclick="putmoney(10,this)">10</td>
+</tr>
+<tr>
+<td id=11 class="n" onclick="putmoney(11,this)">11</td><td id=12  class="n" onclick="putmoney(12,this)">12</td><td id=13  class="n" onclick="putmoney(13,this)">13</td><td id=14 onclick="putmoney(14,this)">14</td><td id=15 onclick="putmoney(15,this)">15</td>
+</tr>
+<tr>
+<td id=16 class="n" onclick="putmoney(16,this)">16</td><td id=17 class="n" onclick="putmoney(17,this)">17</td><td id=18  class="n" onclick="putmoney(18,this)">18</td><td id=19 onclick="putmoney(19,this)">19</td><td id=20 onclick="putmoney(20,this)">20</td>
+</tr>
+<tr>
+<td id=21 class="n" onclick="putmoney(21,this)">21</td><td id=22  class="n" onclick="putmoney(22,this)">22</td><td id=23 class="n" onclick="putmoney(23,this)">23</td><td id=24 onclick="putmoney(24,this)">24</td><td></td>
+</tr>
+
+<table>
+</div>
+
+<table id="money" style="position:absolute;top:200px;left:100px;" bgcolor="lightblue">
+</table>
+
+</body>
+</html>
